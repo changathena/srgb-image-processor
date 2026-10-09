@@ -30,7 +30,7 @@ Python 3.9 or newer is required.
 
 ```bash
 # 1. Download the project and move into the folder
-git clone (repo link)
+git clone https://github.com/changathena/srgb-image-processor
 cd srgb-image-processor
 
 # 2. Install the packages
