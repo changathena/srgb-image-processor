@@ -54,7 +54,7 @@ srgb-image-processor/
 ```
 
 ## Deployment
-The app needs a host that runs Python. On Render, use:
+The app needs a host that runs Python. On [Render](https://render.com/), use:
 
 - **Build command**: `pip install -r requirements.txt`
 - **Start command**: `gunicorn app:app`
