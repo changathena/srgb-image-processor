@@ -56,7 +56,7 @@ def analyze(file_storage):
     image, is_grayscale = load_image(file_storage)
     img_array = np.array(image)
     normalized = normalize_image(img_array)
-    lienarized = linearize_image(normalized)
+    linearized = linearize_image(normalized)
     means = {
         "Red": mean_channel(linearized, 0),
         "Green": mean_channel(linearized, 1),
