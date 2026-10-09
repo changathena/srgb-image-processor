@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html land="en">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Linear RGB Means</title>
     <!-- fonts -->
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <main>
         <header>
             <h1>Linear RGB Means</h1>
-            <p>Upload an image to find the average red, green, and blue intesity after sRGB gamma encoding is removed.</p>
+            <p>Upload an image to find the average red, green, and blue intensity after sRGB gamma encoding is removed.</p>
         </header>
 
         <!-- upload form
@@ -31,7 +31,7 @@
             <button type="submit">Analyze image</button>
          </form>
 
-         {# Only draw the results area if there is an error OR a result to show}
+         {# Only draw the results area if there is an error OR a result to show #}
          {% if error or result %}
 
          <!-- area-live makes screen readers announce new results -->
@@ -62,7 +62,7 @@
                     <span class="name">{{ channel }} channel mean</span>
 
                     <span class="track">
-                        <span class="fill" style="width: {{ (value * 100)|round(1) }}">
+                        <span class="fill" style="width: {{ (value * 100)|round(1) }}%">
                         </span>
                     </span>
 
@@ -77,7 +77,7 @@
               <p class="note">This is a grayscale image, so it has no separate color channels. All three means are reported as 0.</p>
               {% endif %}
 
-              <p class="note">Values run from 0.00 (black) to 1.00 (white) on a lienar scale, so they look darker than the stored sRGB values.</p>
+              <p class="note">Values run from 0.00 (black) to 1.00 (white) on a linear scale, so they look darker than the stored sRGB values.</p>
               {% endif %}
           </section>
           {% endif %}
