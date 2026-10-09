@@ -73,7 +73,7 @@
               </ul>
 
               {# Extra message that only appears for grayscale images #}
-              {% ig resukt.grayscale %}
+              {% if result.grayscale %}
               <p class="note">This is a grayscale image, so it has no separate color channels. All three means are reported as 0.</p>
               {% endif %}
 
