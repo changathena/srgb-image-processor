@@ -62,4 +62,5 @@ The app needs a host that runs Python. On [Render](https://render.com/), use:
 Set `debug=False` in 'app.py` before deploying
 
 ## Author
-Athena Chang, Purdue University
+Athena Chang
+Purdue University, College of Engineering
