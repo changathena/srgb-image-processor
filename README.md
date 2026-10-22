@@ -63,5 +63,5 @@ Set `debug=False` in 'app.py` before deploying
 
 ## Author
 Athena Chang
-
-Purdue University, College of Engineering
+<br>
+changathena@outlook.com | [changathena.github.io](https://changathena.github.io/)
