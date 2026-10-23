@@ -7,13 +7,13 @@ from PIL import Image, UnidentifiedImageError # Pillow: opens and edits images
 
 # app setup
 
-# creates web app
+# creates web app with flask
 app = Flask(__name__)
 
-# rejects uploaders >10MB
+# rejects uploads over 10 MB storage
 app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024
 
-# file endings that are acceptable
+# only accepts uploads of these file type
 ALLOWED_EXTENSIONS = {"jpg", "jpeg", "png", "bmp", "gif", "webp", "tif", "tiff"}
 
 # pillow describes image img with a "mode" (how pixels are stored)
@@ -21,10 +21,12 @@ GRAYSCALE_MODES = {"1", "L", "LA", "I", "I;16"}
 
 # math functions
 
+# normalization: standardize colors
 def normalize_image(img_array):
     # NumPy divides every number in array at once
     return img_array / 255.0
 
+# linearization: basically making the input and output values more proportional
 def linearize_image(img_array):
     return np.where(
         img_array <= 0.04045,
@@ -96,6 +98,7 @@ def index():
 
     return render_template("index.html", result=result, error=error)
 
+# when file upload exceeds 10 mb
 @app.errorhandler(413)
 def file_too_large(_):
     return render_template(
